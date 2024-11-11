@@ -1,0 +1,40 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f2937; /* Cor de fundo mais escura para melhor contraste */
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #fff, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .text-5xl {
+        font-size: 2.5rem;
+    }
+    nav .flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav .flex.items-center.space-x-4 {
+        margin-top: 10px;
+    }
+}

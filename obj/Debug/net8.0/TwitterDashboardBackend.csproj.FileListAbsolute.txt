@@ -1,0 +1,7 @@
+/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/obj/Debug/net8.0/TwitterDashboardBackend.csproj.AssemblyReference.cache
+/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/obj/Debug/net8.0/TwitterDashboardBackend.GeneratedMSBuildEditorConfig.editorconfig
+/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/obj/Debug/net8.0/TwitterDashboardBackend.AssemblyInfoInputs.cache
+/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/obj/Debug/net8.0/TwitterDashboardBackend.AssemblyInfo.cs
+/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/obj/Debug/net8.0/TwitterDashboardBackend.csproj.CoreCompileInputs.cache
+/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/obj/Debug/net8.0/TwitterDashboardBackend.MvcApplicationPartsAssemblyInfo.cs
+/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/obj/Debug/net8.0/TwitterDashboardBackend.MvcApplicationPartsAssemblyInfo.cache

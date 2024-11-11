@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SocialPulse X - Dashboard de análise do Twitter desenvolvido por Victor Brandão">
+    <meta name="author" content="Victor Brandão">
+    <title>SocialPulse X</title>
+    <!-- Bibliotecas Externas -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Arquivo de Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-zinc-950 m-0 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-black/80 backdrop-blur-md border-b border-zinc-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fab fa-x-twitter text-white text-2xl mr-2"></i>
+                    <span class="font-bold text-xl text-white">SocialPulse X</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="text-white">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="refreshButton" class="bg-zinc-900 hover:bg-zinc-800 text-white px-4 py-2 rounded-full transition duration-200 border border-zinc-700">
+                        <i class="fas fa-sync-alt mr-2"></i>Atualizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-zinc-900 to-black"></div>
+        <div class="container mx-auto px-4 relative">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-5xl font-bold mb-6 gradient-text">SocialPulse X</h1>
+                <p class="text-xl text-gray-400 mb-8">Monitore e analise sua presença no X com insights poderosos</p>
+                <div class="flex justify-center space-x-4">
+                    <button class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition">
+                        Começar Agora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <main class="container mx-auto px-4 py-12 flex-grow">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800" data-aos="fade-up">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-white font-semibold">Seguidores</h3>
+                    <i class="fas fa-users text-gray-400"></i>
+                </div>
+                <p class="text-3xl font-bold text-white" id="followersCount">--</p>
+                <p class="text-green-500 text-sm"><i class="fas fa-arrow-up mr-1"></i>12% este mês</p>
+            </div>
+            <!-- Adicione mais cards de estatísticas conforme necessário -->
+        </div>
+
+        <!-- Charts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+                <h3 class="text-white font-semibold mb-4">Engajamento</h3>
+                <canvas id="engagementChart"></canvas>
+            </div>
+            <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+                <h3 class="text-white font-semibold mb-4">Crescimento</h3>
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div id="timeline" class="space-y-4">
+            <!-- Tweets serão carregados aqui -->
+        </div>
+    </main>
+
+    <!-- Seção de Introdução -->
+    <section class="bg-white border-b py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-gray-800">Sobre o SocialPulse X</h2>
+                <p class="text-gray-600 mt-2">Monitore e analise sua presença no Twitter em um só lugar</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-blue-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-user-circle text-blue-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Seu Perfil</h3>
+                    <p class="text-gray-600">Visualize suas informações e estatísticas de perfil</p>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-stream text-blue-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Timeline</h3>
+                    <p class="text-gray-600">Acompanhe seus tweets e interações recentes</p>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-chart-line text-blue-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Análises</h3>
+                    <p class="text-gray-600">Métricas e insights sobre seu desempenho</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 border-t border-zinc-800 py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-white text-xl font-bold">Sobre o Projeto</h3>
+                    <p class="text-gray-400">SocialPulse X: Desenvolvido por Victor Brandão para análise avançada de dados do X (Twitter).</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <h3 class="text-white text-xl font-bold">Desenvolvedor</h3>
+                    <p class="text-gray-400">Victor Brandão</p>
+                    <p class="text-gray-400">Full Stack Developer & UI/UX Designer</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <h3 class="text-white text-xl font-bold">Encontre-me</h3>
+                    <div class="space-y-3">
+                        <a href="https://www.linkedin.com/in/victorhbrandao" target="_blank" 
+                           class="flex items-center text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin text-xl w-8"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/victorbrandao" target="_blank"
+                           class="flex items-center text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github text-xl w-8"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://x.com/victorhbrandao" target="_blank"
+                           class="flex items-center text-gray-400 hover:text-white transition">
+                            <i class="fab fa-x-twitter text-xl w-8"></i>
+                            <span>X (Twitter)</span>
+                        </a>
+                        <a href="https://instagram.com/victorhbrandao" target="_blank"
+                           class="flex items-center text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl w-8"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <h3 class="text-white text-xl font-bold">Contato</h3>
+                    <a href="mailto:victorhbrandao@gmail.com" 
+                       class="flex items-center text-gray-400 hover:text-white transition">
+                        <i class="fas fa-envelope text-xl w-8"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-zinc-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Victor Brandão. Todos os direitos reservados.</p>
+                <p class="text-gray-500 text-sm mt-2">
+                    Feito com <i class="fas fa-heart text-red-500"></i> em Recife, Brasil
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

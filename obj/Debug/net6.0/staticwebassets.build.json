@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "3CcO0rJ7abVwnxEqGLlGneB7z/3PeT52dRH6B4RzFmQ=",
+  "Source": "TwitterDashboardBackend",
+  "BasePath": "_content/TwitterDashboardBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TwitterDashboardBackend/wwwroot",
+      "Source": "TwitterDashboardBackend",
+      "ContentRoot": "/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/wwwroot/",
+      "BasePath": "_content/TwitterDashboardBackend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/wwwroot/index.html",
+      "SourceId": "TwitterDashboardBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/victorbrandao/TwitterDashboard/TwitterDashboardBackend/wwwroot/",
+      "BasePath": "_content/TwitterDashboardBackend",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ]
+}
