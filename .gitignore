@@ -1,0 +1,46 @@
+## .NET Core
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+.vs/
+.vscode/
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+## Dependências
+packages/
+node_modules/
+
+## Secrets e Configurações
+appsettings.Development.json
+appsettings.Production.json
+*.pfx
+*.key
+
+## Logs
+logs/
+*.log
+npm-debug.log*
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
